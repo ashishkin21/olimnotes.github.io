@@ -20,22 +20,20 @@
         <script> 
           const toggleDarkMode = document.querySelector('.js-toggle-dark-mode'); 
           
-          // Get the stored theme from local storage, or default to 'light'
-          const storedTheme = localStorage.getItem('theme') || 'light';
-          jtd.setTheme(storedTheme);
-          if (storedTheme === 'dark') {
-            toggleDarkMode.textContent = 'Return to the light side';
-          }
-
           jtd.addEvent(toggleDarkMode, 'click', function() {
-            if (jtd.getTheme() === 'dark') {
-              jtd.setTheme('light');
-              toggleDarkMode.textContent = 'Preview dark color scheme';
-              localStorage.setItem('theme', 'light');
-            } else {
+
+            if (!localStorage.getItem('theme')) {
+              localStorage.setItem('theme', 'dark');
               jtd.setTheme('dark');
               toggleDarkMode.textContent = 'Return to the light side';
+            } else if (localStorage.getItem('theme') === 'dark') {
+              localStorage.setItem('theme', 'light');
+              jtd.setTheme('light');
+              toggleDarkMode.textContent = 'Preview dark color scheme';
+            } else {
               localStorage.setItem('theme', 'dark');
+              jtd.setTheme('dark');
+              toggleDarkMode.textContent = 'Return to the light side';
             }
           });
         </script>
