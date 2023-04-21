@@ -1,6 +1,8 @@
 ---
 ---
-{% if site.color_scheme and site.color_scheme != "nil" %}
+{% if site.theme != "nil" %}
+  {% assign color_scheme = site.theme %}
+{% elsif site.color_scheme and site.color_scheme != "nil" %}
   {% assign color_scheme = site.color_scheme %}
 {% else %}
   {% assign color_scheme = "light" %}
