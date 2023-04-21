@@ -20,15 +20,24 @@
         <script> 
           const toggleDarkMode = document.querySelector('.js-toggle-dark-mode'); 
           
-          jtd.addEvent(toggleDarkMode, 'click', function(){ 
-            if (jtd.getTheme() === 'dark') { 
-              jtd.setTheme('light'); 
-              toggleDarkMode.textContent = 'Preview dark color scheme'; 
-            } else { 
-              jtd.setTheme('dark'); 
-              toggleDarkMode.textContent = 'Return to the light side'; 
-            } 
-          }); 
+          // Get the stored theme from local storage, or default to 'light'
+          const storedTheme = localStorage.getItem('theme') || 'light';
+          jtd.setTheme(storedTheme);
+          if (storedTheme === 'dark') {
+            toggleDarkMode.textContent = 'Return to the light side';
+          }
+
+          jtd.addEvent(toggleDarkMode, 'click', function() {
+            if (jtd.getTheme() === 'dark') {
+              jtd.setTheme('light');
+              toggleDarkMode.textContent = 'Preview dark color scheme';
+              localStorage.setItem('theme', 'light');
+            } else {
+              jtd.setTheme('dark');
+              toggleDarkMode.textContent = 'Return to the light side';
+              localStorage.setItem('theme', 'dark');
+            }
+          });
         </script>
       </li>
     </ul>
