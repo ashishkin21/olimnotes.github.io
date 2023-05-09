@@ -22,12 +22,15 @@
           
           jtd.addEvent(toggleDarkMode, 'click', function() {
 
-            if (jtd.getTheme() === ('default' || 'light')) {
+            if (jtd.getTheme() === 'default') {
               jtd.setTheme('dark');
               toggleDarkMode.textContent = 'Включить свет';
-            } else {
+            } else if (jtd.getTheme() === 'dark') {
               jtd.setTheme('light');
               toggleDarkMode.textContent = 'Выключить свет';
+            } else {
+              jtd.setTheme('dark');
+              toggleDarkMode.textContent = 'Включить свет';
             }
 
             // if (!localStorage.getItem('theme')) {
