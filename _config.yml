@@ -4,6 +4,8 @@ theme: just-the-docs
 
 url: https://ashishkin21.github.io/olimnotes.github.io
 
+permalink: pretty
+
 aux_links:
   Template Repository: https://github.com/ashishkin21/olimnotes.github.io
 
