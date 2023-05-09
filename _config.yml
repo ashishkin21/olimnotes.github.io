@@ -23,17 +23,17 @@ last_edit_timestamp: true
 # ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
 
 # https://just-the-docs.github.io/just-the-docs/docs/configuration/#document-collections
-collections:
-  tests:
-    permalink: "/pages/:collection/:path/"
-    output: true
-  tutorials:
-    permalink: "/pages/:collection/:path/"
-    output: true
+# collections:
+#   tests:
+#     permalink: "/pages/:collection/:path/"
+#     output: true
+#   tutorials:
+#     permalink: "/pages/:collection/:path/"
+#     output: true
 
-just_the_docs:
-  collections:
-    tests:
-      name: Tests
-    tutorials:
-      name: Tutorials
+# just_the_docs:
+#   collections:
+#     tests:
+#       name: Tests
+#     tutorials:
+#       name: Tutorials
