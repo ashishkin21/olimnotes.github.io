@@ -2,7 +2,7 @@
 title: Главная
 layout: home
 ---
-1. TOC
+- TOC
 {:toc}
 ---
 
